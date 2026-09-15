@@ -1,0 +1,85 @@
+name: Reproduction failure
+description: You ran a Reliax evaluation script and got a different number from the one we publish.
+title: "[repro] "
+labels: ["reproduction", "priority"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for running it. A number that does not reproduce is the most
+        useful issue anyone can file here, and we treat it as higher priority
+        than a feature request.
+
+        If the difference turns out to be real, we correct the published figure
+        and say so in the release notes. We do not quietly adjust it.
+
+  - type: input
+    id: claim
+    attributes:
+      label: Which published number
+      description: Quote the figure and where you found it (README table, PAPER.md section, slide, reliax.io).
+      placeholder: "Conformal coverage at 0.95 target, Taiwan — README says 0.9515 +/- 0.0040"
+    validations:
+      required: true
+
+  - type: input
+    id: observed
+    attributes:
+      label: What you got
+      placeholder: "0.9402"
+    validations:
+      required: true
+
+  - type: input
+    id: script
+    attributes:
+      label: Which runner produced it
+      placeholder: "eval/run_eval.py"
+    validations:
+      required: true
+
+  - type: input
+    id: commit
+    attributes:
+      label: Commit SHA
+      description: "`git rev-parse HEAD`"
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, Python version, and the output of `pip freeze` (or just the lines for numpy, scipy and scikit-learn).
+      render: shell
+    validations:
+      required: true
+
+  - type: textarea
+    id: results_json
+    attributes:
+      label: Relevant slice of the results file
+      description: The entry from `results/results.json` (or the relevant results file) that disagrees.
+      render: json
+    validations:
+      required: false
+
+  - type: dropdown
+    id: data_tier
+    attributes:
+      label: How did you obtain the data
+      options:
+        - Tier 1 — shipped in the repo (UCI)
+        - Tier 2 — fetched by script (TableShift, HMDA, ACS)
+        - Tier 3 — obtained separately under the provider's terms
+        - Not sure
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else
+      description: Did you change any threshold, seed or split? Did the run complete cleanly?
+    validations:
+      required: false

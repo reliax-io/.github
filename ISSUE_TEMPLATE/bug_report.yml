@@ -1,0 +1,66 @@
+name: Bug report
+description: Something in the code does not work as documented.
+title: "[bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        If the bug has a security or certificate-integrity dimension — forging
+        a certificate, breaking the hash chain, suppressing a drift alarm —
+        stop and follow SECURITY.md instead. Do not file it here.
+
+  - type: dropdown
+    id: repo
+    attributes:
+      label: Which repository
+      options:
+        - reliax-evaluation
+        - certificate-spec
+        - reliax-verify
+        - reliax-python
+        - reliax-core
+        - Not sure
+    validations:
+      required: true
+
+  - type: textarea
+    id: what_happened
+    attributes:
+      label: What happened
+      description: What you expected, and what you got instead.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: The smallest sequence of commands that shows the problem.
+      render: shell
+    validations:
+      required: true
+
+  - type: textarea
+    id: traceback
+    attributes:
+      label: Full output or traceback
+      render: shell
+    validations:
+      required: false
+
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit SHA
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: OS and Python version.
+      render: shell
+    validations:
+      required: true

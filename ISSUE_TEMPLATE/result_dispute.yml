@@ -1,0 +1,62 @@
+name: Methodological challenge
+description: You think a claim, guarantee or experimental design is wrong — not that a number failed to reproduce.
+title: "[method] "
+labels: ["methodology"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this when the code runs correctly but you believe the conclusion
+        drawn from it does not follow. Disagreements about method are welcome
+        here and are argued in public.
+
+        If you think a number is simply wrong, use the reproduction failure
+        template instead.
+
+  - type: input
+    id: claim
+    attributes:
+      label: The claim you are challenging
+      description: Quote it and say where it appears.
+      placeholder: "PAPER.md 7.3 — 'the realised disbelief exceeds the claim on 8 of 8 shifts'"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: What kind of problem
+      options:
+        - A guarantee is stated more strongly than the theorem supports
+        - An assumption is violated and not acknowledged
+        - The baseline or comparison is unfair
+        - The statistical treatment is wrong (CIs, multiplicity, seeds)
+        - A signal is being used as if it were guaranteed
+        - The pre-registration was not followed
+        - Something else
+    validations:
+      required: true
+
+  - type: textarea
+    id: argument
+    attributes:
+      label: Your argument
+      description: What is wrong, and what would have to be true for the claim to hold.
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Supporting evidence
+      description: A counterexample, a citation, a derivation, or a run we can reproduce.
+    validations:
+      required: false
+
+  - type: textarea
+    id: remedy
+    attributes:
+      label: What would fix it
+      description: A weaker claim, a different experiment, a caveat, a retraction.
+    validations:
+      required: false

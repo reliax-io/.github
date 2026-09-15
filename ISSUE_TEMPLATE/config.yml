@@ -1,1 +1,11 @@
-
+blank_issues_enabled: false
+contact_links:
+  - name: Security or certificate-integrity issue
+    url: https://github.com/reliax/.github/security/policy
+    about: Never file these as public issues. Use private vulnerability reporting.
+  - name: Question or discussion
+    url: https://github.com/orgs/reliax/discussions
+    about: Questions about the method, the guarantees or how to use this. Asked in public so the next person can find the answer.
+  - name: Commercial licence for reliax-core
+    url: https://reliax.io
+    about: Production use of the engine needs a licence. Non-production use does not — see the LICENSE file first.
