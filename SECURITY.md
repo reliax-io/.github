@@ -7,8 +7,7 @@ This policy applies to every repository in the Reliax organisation.
 **Do not open a public issue.**
 
 Use GitHub's private vulnerability reporting on the affected repository
-(Security tab → Report a vulnerability), or email **security@reliax.io**
-[confirm address].
+(Security tab → Report a vulnerability), or email **security@reliax.io**.
 
 Please include:
 

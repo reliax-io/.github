@@ -18,7 +18,7 @@ body:
     attributes:
       label: Which published number
       description: Quote the figure and where you found it (README table, PAPER.md section, slide, reliax.io).
-      placeholder: "Conformal coverage at 0.95 target, Taiwan — README says 0.9515 +/- 0.0040"
+      placeholder: "Conformal coverage at 0.95 target, Taiwan: README says 0.9515 +/- 0.0040"
     validations:
       required: true
 
@@ -69,9 +69,9 @@ body:
     attributes:
       label: How did you obtain the data
       options:
-        - Tier 1 — shipped in the repo (UCI)
-        - Tier 2 — fetched by script (TableShift, HMDA, ACS)
-        - Tier 3 — obtained separately under the provider's terms
+        - Tier 1: shipped in the repo (UCI)
+        - Tier 2: fetched by script (TableShift, HMDA, ACS)
+        - Tier 3: obtained separately under the provider's terms
         - Not sure
     validations:
       required: true

@@ -1,5 +1,5 @@
 name: Methodological challenge
-description: You think a claim, guarantee or experimental design is wrong — not that a number failed to reproduce.
+description: You think a claim, guarantee or experimental design is wrong, not that a number failed to reproduce.
 title: "[method] "
 labels: ["methodology"]
 body:
@@ -18,7 +18,7 @@ body:
     attributes:
       label: The claim you are challenging
       description: Quote it and say where it appears.
-      placeholder: "PAPER.md 7.3 — 'the realised disbelief exceeds the claim on 8 of 8 shifts'"
+      placeholder: "PAPER.md 7.3: 'the realised disbelief exceeds the claim on 8 of 8 shifts'"
     validations:
       required: true
 

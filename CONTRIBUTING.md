@@ -16,12 +16,12 @@ Reliax repositories are licensed differently depending on what they do, and
 the licence is stated in each repository's `LICENSE` file. Check it before
 contributing.
 
-- **Apache-2.0 repositories** — the certificate specification, the verifier,
+- **Apache-2.0 repositories**: the certificate specification, the verifier,
   the Python SDK and the evaluation package. Anyone may use these for any
   purpose, including commercial and production use. An auditor must be able
   to verify a Reliax certificate without asking anyone's permission, so these
   will stay permissively licensed.
-- **Source-available repositories** — the reliability engine. The source is
+- **Source-available repositories**: the reliability engine. The source is
   public and free for non-production use, but production use requires a
   commercial licence. See that repository's `LICENSE` for the exact terms.
 
@@ -34,7 +34,7 @@ across the organisation.
 
 The CLA exists because Reliax offers commercial licences for the engine. To do
 that lawfully we need the right to license contributed code under terms other
-than the one it arrived under. You keep the copyright in your contribution —
+than the one it arrived under. You keep the copyright in your contribution;
 you are granting a licence, not signing it away.
 
 ## Reproducibility rules
@@ -56,7 +56,7 @@ numbers.
    that would.
 5. **Pre-registration is binding.** Changes to a pre-registered protocol go
    through the amendment process documented in the repository, before the
-   relevant data is opened — never after seeing a result.
+   relevant data is opened, never after seeing a result.
 
 ## Pull requests
 
@@ -71,8 +71,8 @@ numbers.
 
 For bugs and feature requests, open an issue.
 
-For anything with a security or integrity dimension — a flaw in the hash
-chain, a way to forge or replay a certificate, a dependency vulnerability —
+For anything with a security or integrity dimension (a flaw in the hash
+chain, a way to forge or replay a certificate, a dependency vulnerability),
 do **not** open a public issue. Follow `SECURITY.md`.
 
 ## Questions

@@ -2,27 +2,27 @@
 
 ## Where to go
 
-**A question about the method or the guarantees** — what conformal coverage
+**A question about the method or the guarantees**: what conformal coverage
 does and does not promise, why a signal is not a guarantee, how the drift
 tripwire behaves. Use
-[Discussions](https://github.com/orgs/reliax/discussions). Asked in public so
+[Discussions](https://github.com/reliax-io/reliax-evaluation/discussions). Asked in public so
 the next person finds the answer.
 
-**Something is broken** — open an issue on the relevant repository and use the
+**Something is broken**: open an issue on the relevant repository and use the
 bug report template.
 
-**A published number did not reproduce** — open an issue using the
+**A published number did not reproduce**: open an issue using the
 reproduction failure template. These get priority. If the difference is real
 we correct the published figure and say so.
 
-**You think a claim is wrong** — use the methodological challenge template.
+**You think a claim is wrong**: use the methodological challenge template.
 These are argued in public.
 
-**A security or certificate-integrity issue** — do not open an issue. Follow
+**A security or certificate-integrity issue**: do not open an issue. Follow
 [SECURITY.md](SECURITY.md).
 
 **Production use of `reliax-core`, a pilot, or a shadow replay of your own
-book** — [reliax.io](https://reliax.io). Non-production use needs no
+book**: [reliax.io](https://reliax.io). Non-production use needs no
 conversation with us; read the licence and run it.
 
 ## What to expect

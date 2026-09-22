@@ -6,8 +6,8 @@ body:
   - type: markdown
     attributes:
       value: |
-        If the bug has a security or certificate-integrity dimension — forging
-        a certificate, breaking the hash chain, suppressing a drift alarm —
+        If the bug has a security or certificate-integrity dimension (forging
+        a certificate, breaking the hash chain, suppressing a drift alarm),
         stop and follow SECURITY.md instead. Do not file it here.
 
   - type: dropdown
