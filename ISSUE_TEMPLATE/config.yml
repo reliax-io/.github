@@ -6,6 +6,6 @@ contact_links:
   - name: Question or discussion
     url: https://github.com/reliax-io/reliax-evaluation/discussions
     about: Questions about the method, the guarantees or how to use this. Asked in public so the next person can find the answer.
-  - name: Commercial licence for reliax-core
+  - name: Pilot or platform licence
     url: https://reliax.io
-    about: Production use of the engine needs a licence. Non-production use does not; see the LICENSE file first.
+    about: The published libraries are Apache-2.0 and need no licence conversation. The operated platform is licensed separately.

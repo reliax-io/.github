@@ -21,9 +21,9 @@ These are argued in public.
 **A security or certificate-integrity issue**: do not open an issue. Follow
 [SECURITY.md](SECURITY.md).
 
-**Production use of `reliax-core`, a pilot, or a shadow replay of your own
-book**: [reliax.io](https://reliax.io). Non-production use needs no
-conversation with us; read the licence and run it.
+**A pilot, or a shadow replay of your own book on the Reliax platform**:
+[reliax.io](https://reliax.io). The open libraries need no conversation with
+us; read the licence and run them.
 
 ## What to expect
 

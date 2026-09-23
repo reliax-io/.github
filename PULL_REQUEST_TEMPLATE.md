@@ -38,5 +38,5 @@
 
 - [ ] Nothing that is a signal is now used in a routing rule.
 - [ ] No claim is stated more strongly than the underlying theorem supports.
-- [ ] Changes to the certificate format are reflected in `certificate-spec`
+- [ ] Changes to the certificate format are reflected in `reliax-certificate`
       and the schema version is bumped.

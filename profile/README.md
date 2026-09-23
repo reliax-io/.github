@@ -15,9 +15,9 @@ consequential and already regulated.
 |---|---|---|---|
 | [`reliax-evaluation`](https://github.com/reliax-io/reliax-evaluation) | Reproducibility package for the whitepaper. Every reported number regenerates from a runner script. | Apache-2.0 | Published |
 | [`reliax-python`](https://github.com/reliax-io/reliax-python) | Client SDK, `pip install reliax-sdk` | Apache-2.0 | Name reserved, no client API yet |
-| `certificate-spec` | Certificate format: JSON schema, hash-chain construction, versioning. | Apache-2.0 | Planned, not yet published |
+| `reliax-certificate` | The certificate: JSON schema, TypeScript types, hash-chain format, wording template and fidelity check. | Apache-2.0 | Planned, not yet published |
 | `reliax-verify` | Independent verifier. Checks a certificate chain without contacting us. | Apache-2.0 | Planned, not yet published |
-| `reliax-core` | The reliability engine. | BUSL-1.1, free for non-production use | Planned, not yet published |
+| `reliax-core` | The reliability engine: the three theorems, the fast-loop evaluator, the route trace and the certificate reasons. | Apache-2.0 | Planned, not yet published |
 
 The last three are not written yet. They are listed so the intended shape of
 the split is visible, not to imply there is code behind them.
@@ -50,24 +50,24 @@ severe distribution shift the fusion score ranks worse than referring cases at
 random, and the 2x bar stated in earlier material was withdrawn once that was
 measured.
 
-## Why the licences differ
+## What is open and what is sold
 
-An auditor has to be able to check a Reliax certificate without our
-permission. The specification, the verifier and the SDK are therefore
-permissively licensed, and will stay that way.
+Everything listed above is Apache-2.0: the theorems, the certificate format,
+the verifier and the SDKs. Anything that routes a case or is written on the
+certificate is open, and stays open. An auditor replaying a certificate on
+their own book is doing ordinary permitted use, with a patent grant attached
+and no licence to interpret.
 
-The engine is source-available: readable, runnable, and free to evaluate or to
-replay your own history against in shadow mode. A licence applies once its
-output starts affecting live decisions.
-
-We do not call the whole thing open source. Parts of it are, and the engine is
-not.
+What Reliax sells is the operated system around it: the cohorts, the queues,
+the slow loop and the signed trail. That platform is source-available under
+FSL or BSL 1.1, converting to a permissive licence after two to four years,
+and it is not published here.
 
 ## Contributing
 
 Read [`CONTRIBUTING.md`](https://github.com/reliax-io/.github/blob/main/CONTRIBUTING.md)
 and open an issue before writing anything substantial. A CLA is required
-before a first merge, because the engine is dual-licensed.
+before a first merge, because the platform is licensed separately.
 
 Security and certificate-integrity issues go through
 [`SECURITY.md`](https://github.com/reliax-io/.github/blob/main/SECURITY.md),

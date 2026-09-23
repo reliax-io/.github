@@ -10,20 +10,19 @@ repositories carry claims that are checked by validators and auditors, so a
 change that alters a reported number, a threshold or a guarantee needs to be
 discussed before it is written, not after.
 
-## The two kinds of repository
+## How the code is licensed
 
-Reliax repositories are licensed differently depending on what they do, and
-the licence is stated in each repository's `LICENSE` file. Check it before
-contributing.
+Everything published in this organisation is Apache-2.0: the engine, the
+certificate, the verifier, the SDKs and the evaluation package. Anyone may
+use it for any purpose, including commercial and production use. An auditor
+must be able to verify a Reliax certificate without asking anyone's
+permission, so these will stay permissively licensed. The licence is stated
+in each repository's `LICENSE` file.
 
-- **Apache-2.0 repositories**: the certificate specification, the verifier,
-  the Python SDK and the evaluation package. Anyone may use these for any
-  purpose, including commercial and production use. An auditor must be able
-  to verify a Reliax certificate without asking anyone's permission, so these
-  will stay permissively licensed.
-- **Source-available repositories**: the reliability engine. The source is
-  public and free for non-production use, but production use requires a
-  commercial licence. See that repository's `LICENSE` for the exact terms.
+The Reliax platform is not published here. The operated system around the
+engine, the cohorts, the queues, the slow loop and the signed trail, ships
+source-available under FSL or BSL 1.1 and converts to a permissive licence
+after two to four years.
 
 ## Contributor Licence Agreement
 
@@ -32,8 +31,8 @@ Contributor Licence Agreement. A bot will comment on your pull request with a
 link; signing takes about a minute and covers all your future contributions
 across the organisation.
 
-The CLA exists because Reliax offers commercial licences for the engine. To do
-that lawfully we need the right to license contributed code under terms other
+The CLA exists because Reliax also ships a separately licensed platform built
+on this code. To do that lawfully we need the right to license contributed code under terms other
 than the one it arrived under. You keep the copyright in your contribution;
 you are granting a licence, not signing it away.
 

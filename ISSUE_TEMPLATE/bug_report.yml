@@ -16,7 +16,7 @@ body:
       label: Which repository
       options:
         - reliax-evaluation
-        - certificate-spec
+        - reliax-certificate
         - reliax-verify
         - reliax-python
         - reliax-core
