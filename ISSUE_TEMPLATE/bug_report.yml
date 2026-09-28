@@ -17,7 +17,6 @@ body:
       options:
         - reliax-evaluation
         - reliax-certificate
-        - reliax-verify
         - reliax-python
         - reliax-core
         - Not sure

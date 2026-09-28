@@ -13,14 +13,17 @@ consequential and already regulated.
 
 | Repository | What it is | Licence | Status |
 |---|---|---|---|
-| [`reliax-evaluation`](https://github.com/reliax-io/reliax-evaluation) | Reproducibility package for the whitepaper. Every reported number regenerates from a runner script. | Apache-2.0 | Published |
-| [`reliax-python`](https://github.com/reliax-io/reliax-python) | Client SDK, `pip install reliax-sdk` | Apache-2.0 | Name reserved, no client API yet |
-| `reliax-certificate` | The certificate: JSON schema, TypeScript types, hash-chain format, wording template and fidelity check. | Apache-2.0 | Planned, not yet published |
-| `reliax-verify` | Independent verifier. Checks a certificate chain without contacting us. | Apache-2.0 | Planned, not yet published |
-| `reliax-core` | The reliability engine: the three theorems, the fast-loop evaluator, the route trace and the certificate reasons. | Apache-2.0 | Planned, not yet published |
+| [`reliax-core`](https://github.com/reliax-io/reliax-core) | The method, `pip install reliax-core`: conformal sets with per-segment coverage, the Venn-Abers bracket, the test martingale and the credibility p-value (guarantees); the fast-loop evaluator with its route trace and certificate reasons (exact); kNN distance, PSI, the error auditor, the composite score, subjective-logic fusion and the calibration opinion (signals). Pure functions, no I/O. | Apache-2.0 | 0.2.0 |
+| [`reliax-certificate`](https://github.com/reliax-io/reliax-certificate) | The certificate, `pip install reliax-certificate`: envelope schema v16 with a class on every field, the canonical-JSON SHA-256 hash chain, the wording template and banned wording, the fidelity check for readable renderings, TypeScript types, and the verifier `reliax verify record.json`. | Apache-2.0 | 0.1.0 |
+| [`reliax-python`](https://github.com/reliax-io/reliax-python) | The client, `pip install reliax-sdk`: `reliax.assess(query, ctx)`, one call out, one certificate back. Standard library only. | Apache-2.0 | 0.1.0 |
+| [`reliax-evaluation`](https://github.com/reliax-io/reliax-evaluation) | Reproducibility package for the whitepaper. Every reported number regenerates from a runner script; it runs on the same method code. | Apache-2.0 | Published |
 
-The last three are not written yet. They are listed so the intended shape of
-the split is visible, not to imply there is code behind them.
+The replay line: anything that routes a decision or is written on the
+certificate is Apache-2.0 and replayable, and the verifier works if Reliax no
+longer exists. The platform that holds the state and the workflow (calibration
+builder, reliability engine, review queues, audit service, readable view,
+dashboard, domain packs, advisory signals) is source-available and is not
+published here.
 
 ## What is guaranteed, and what is not
 
@@ -32,8 +35,11 @@ Three components carry proofs, and the routing rules read only those:
 | Venn-Abers bracket | a calibrated probability interval at every score level |
 | Test martingale | anytime-valid drift detection, with false alarms bounded over the whole run |
 
-Two further outputs are signals: the triage rank and the per-cell calibration
-opinion. They are monitors, and no routing rule reads them.
+A fourth guarantee, the credibility p-value, says whether the guarantee covers
+this input. The route itself is exact: six rows read in a fixed order, first
+match wins, replayable from the record. The criticality score and the per-cell
+calibration opinion are signals: they order the queue and inform the slow loop,
+and no routing rule reads them.
 
 Coverage is a property of the procedure over exchangeable data, not a
 probability about any one prediction. Distribution-free per-instance
@@ -52,11 +58,11 @@ measured.
 
 ## What is open and what is sold
 
-Everything listed above is Apache-2.0: the theorems, the certificate format,
-the verifier and the SDKs. Anything that routes a case or is written on the
-certificate is open, and stays open. An auditor replaying a certificate on
-their own book is doing ordinary permitted use, with a patent grant attached
-and no licence to interpret.
+Everything listed above is Apache-2.0: the theorems, the evaluator, the
+certificate format, the verifier and the SDK. Anything that routes a case or is
+written on the certificate is open, and stays open. An auditor replaying a
+certificate on their own book is doing ordinary permitted use, with a patent
+grant attached and no licence to interpret.
 
 What Reliax sells is the operated system around it: the cohorts, the queues,
 the slow loop and the signed trail. That platform is source-available under
