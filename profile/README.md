@@ -13,7 +13,7 @@ version control.
 ALLOW means the decision can be acted on automatically. BLOCK means the
 assessment itself is no longer reliable: the population has drifted or the
 input lies outside what was calibrated, so neither the model nor Reliax's
-certificate is competent for this case, and a person decides without leaning
+certificate is competent for this case, and a person decides without relying
 on either. REVIEW means the certificate holds but the case fails one of the
 thresholds in your own policy, such as an ambiguous prediction set or a
 bracket above your approve ceiling, so a person decides with the model's
