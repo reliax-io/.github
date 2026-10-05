@@ -70,14 +70,32 @@ route(unlike_anything)  # far from every calibration row
 ```
 
 ```
-ALLOW  CERTIFIED      Route trace: row 6 matched, so every check above it passed.
-REVIEW SET_AMBIGUOUS  Route trace: row 3 matched, so every check above it passed.
-BLOCK  OOD_EXTREME    Route trace: row 2 matched, so every check above it passed.
+ALLOW  input within the scope of the guarantee; one label left standing
+REVIEW 2 labels left standing: the model cannot separate them for this case
+BLOCK  input outside the scope of the guarantee: credibility 0.001 below the extreme floor 0.005
 ```
 
-The complete, runnable version with the model and the data is the
-[quick start in reliax-core](https://github.com/reliax-io/reliax-core#quick-start).
+The route comes from six checks read in a fixed order; the first that fails
+sets the route, and the record keeps the list of checks read on the way (the
+route trace).
 
+1. Is the guarantee active on this segment? No drift alarm, no model or
+   calibration-set mismatch. Otherwise BLOCK.
+2. Is the input covered by the guarantee? Credibility at or above the policy
+   floor. Below the floor REVIEW; below the extreme floor BLOCK.
+3. Did the prediction set single out one label? Otherwise REVIEW.
+4. Is the calibrated bracket's upper end within your approve ceiling?
+   Otherwise REVIEW.
+5. Is the stream free of a drift WATCH? Otherwise REVIEW, if the policy says so.
+6. Otherwise ALLOW.
+
+The first input passes all six. The second is covered by the guarantee but
+both labels are left standing at the 95% level, so check 3 sends it to a
+person with the model's answer in front of them. The third sits farther from
+the calibration data than any calibration row does, so check 2 fires at the
+extreme floor and a person decides without the model. The same example, with
+the module table behind it, is the
+[quick start in reliax-core](https://github.com/reliax-io/reliax-core#quick-start).
 
 ## With the platform
 
