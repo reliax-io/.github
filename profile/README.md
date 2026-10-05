@@ -147,6 +147,7 @@ longer exists:
 ```
 pip install reliax-certificate
 reliax verify record.json
+```
 
 ## Read this correctly
 
