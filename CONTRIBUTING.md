@@ -20,7 +20,7 @@ permission, so these will stay permissively licensed. The licence is stated
 in each repository's `LICENSE` file.
 
 The Reliax platform is not published here. The operated system around the
-engine, the cohorts, the queues, the slow loop and the signed trail, ships
+engine, the calibration sets, the queues, the slow loop and the signed trail, ships
 source-available under FSL or BSL 1.1 and converts to a permissive licence
 after two to four years.
 
