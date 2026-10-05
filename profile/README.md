@@ -10,6 +10,24 @@ The routing rule looks only at what the certificate guarantees, and the
 thresholds it applies come from a policy that you write and keep under
 version control.
 
+```mermaid
+flowchart LR
+    M["Your model<br/>score, reason codes"] --> S
+    subgraph open ["Open, Apache-2.0"]
+        S["reliax-sdk<br/>one call out, one certificate back"]
+        C["reliax-core<br/>guarantees and the routing rule"]
+        F["reliax-certificate<br/>record format, hash chain, verifier"]
+    end
+    subgraph platform ["Reliax platform · source-available · in your infrastructure"]
+        P["cohorts, drift state,<br/>review queues, audit trail"]
+    end
+    S --> P
+    P --> C
+    C --> F
+    F --> R[("hash-chained<br/>record")]
+    R --> A["Auditor<br/>verifies without Reliax"]
+```
+
 - **ALLOW.** The decision can be acted on automatically
 - **REVIEW.** The certificate holds but the case fails one of the
 thresholds in your own policy, such as an ambiguous prediction set or a
