@@ -51,22 +51,29 @@ pip install reliax-core
 ```
 
 ```python
+import numpy as np
+from sklearn.linear_model import LogisticRegression
 from reliax_core import ConformalCalibrator, KNNOODDetector, CredibilityReference, Policy, Envelope, evaluate
+
+rng = np.random.default_rng(0)
+X = rng.normal(size=(3000, 4)); y = (X @ [1.2, -0.8, 0.5, 0.3] + rng.normal(size=3000) > 0).astype(int)
+model = LogisticRegression().fit(X[:2000], y[:2000])          # your model, trained as usual
+X_cal, y_cal = X[2000:], y[2000:]                              # a held-out calibration split
 
 sets = ConformalCalibrator(model.predict_proba(X_cal), y_cal)  # the coverage guarantee
 detector = KNNOODDetector().fit(X_cal)
 credibility = CredibilityReference.from_detector(detector)     # "does the guarantee cover this input?"
-policy = Policy(alpha=0.05)                                    # the thresholds you set
+policy = Policy(alpha=0.05, credibility_extreme=0.005)         # the thresholds you set
 
 def route(x):
     env = Envelope(credibility=credibility.p_value(detector.distance(x)),
                    prediction_set=sets.prediction_set(model.predict_proba([x])[0], alpha=policy.alpha))
     d = evaluate(policy, env)
-    print(f"{d.route:6} {d.reason_codes[0]:14} {d.trace_text()}")
+    print(f"{d.route:6} {'; '.join(d.certificate_reasons)}")
 
-route(clear_case)       # one label left standing
-route(borderline_case)  # both labels left standing
-route(unlike_anything)  # far from every calibration row
+route(np.array([2.0, -1.5, 1.0, 0.5]))     # a clear case
+route(X[0])                                # a borderline case
+route(np.array([40.0, 40.0, 40.0, 40.0]))  # nothing like the calibration data
 ```
 
 ```
