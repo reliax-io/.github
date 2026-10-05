@@ -5,7 +5,7 @@ predictions one decision at a time. It sits beside the model, without
 retraining it or touching its weights, and attaches to each prediction a
 certificate that says whether this answer can be relied on at a guaranteed
 error rate, whether that guarantee covers this input, and whether the
-population has moved. Routing to ALLOW, REVIEW or BLOCK reads only the
+population has moved. The routing to ALLOW, REVIEW or BLOCK reads only the
 certified quantities, under a policy you write and version.
 
 ALLOW means the decision can be acted on automatically. BLOCK means the
