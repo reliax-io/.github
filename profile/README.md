@@ -90,9 +90,9 @@ route trace).
    calibration-set mismatch. Otherwise BLOCK.
 2. Is the input covered by the guarantee? Credibility at or above the policy
    floor. Below the floor REVIEW; below the extreme floor BLOCK.
-3. Did the prediction set single out one label? Otherwise REVIEW.
-4. Is the calibrated bracket's upper end within your approve ceiling?
-   Otherwise REVIEW.
+3. Does the prediction set contain exactly one label? Otherwise REVIEW.
+4. If the model says approve, does the calibrated default probability stay
+   under your approve cap, even at the top of its bracket? Otherwise REVIEW.
 5. Is the stream free of a drift WATCH? Otherwise REVIEW, if the policy says so.
 6. Otherwise ALLOW.
 
@@ -126,9 +126,9 @@ print(out.route, out.reason_codes)   # ALLOW ['CERTIFIED']
 print(out.certificate_text)          # the wording stored on the record, verbatim
 ```
 
-PyPI package `reliax-sdk`, import name `reliax`, source at
-[`reliax-python`](https://github.com/reliax-io/reliax-python). Standard
-library only.
+The platform runs inside your own infrastructure and is licensed per
+deployment. To run a pilot or evaluate it on your book, write to
+**contact@reliax.io**.
 
 What comes back, stored verbatim on a hash-chained record:
 
