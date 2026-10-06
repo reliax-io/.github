@@ -148,3 +148,44 @@ probability about any one prediction. Distribution-free per-instance
 conditional coverage is not attainable. Nothing a certificate says is a
 probability that a given decision is right, and no number on it should be
 shown as a percentage next to a decision. The certificate format bans the
+
+
+
+**What the 95% means**
+
+Let $x$ be an applicant, $y$ the true outcome (repay or default), and $C(x)$ the
+certified set: the outcomes kept for that applicant, one or both.
+
+**Guaranteed: an average over applicants.** Over the calibration data and a new
+applicant drawn from the same population:
+
+$$
+\Pr\big(\,y \in C(x)\,\big) \;\ge\; 0.95
+$$
+
+Counted on $N$ decisions, this is the share whose set contains the true outcome:
+
+$$
+\frac{1}{N}\sum_{i=1}^{N} \mathbf{1}\{\,y_i \in C(x_i)\,\} \;\approx\; \Pr\big(y \in C(x)\big) \;\ge\; 0.95
+$$
+
+**For one applicant: right or wrong.** Each term of that sum is 0 or 1, never 0.95:
+
+$$
+\mathbf{1}\{\,y_i \in C(x_i)\,\} \in \{0,\,1\}
+$$
+
+**Not claimed: a probability for this applicant.**
+
+$$
+\Pr\big(\,y \in C(x) \;\big|\; x = \text{this applicant}\,\big) \;\ge\; 0.95
+\qquad \text{(not guaranteed)}
+$$
+
+The guarantee is the average of that last quantity over all applicants, so it can
+hold while some applicants sit below 0.95 and others above:
+
+$$
+\Pr\big(y \in C(x)\big) \;=\; \mathbb{E}_{x}\Big[\Pr\big(y \in C(x) \mid x\big)\Big],
+\qquad \text{for example} \quad 0.5 \times 1.00 \;+\; 0.5 \times 0.90 \;=\; 0.95
+$$
