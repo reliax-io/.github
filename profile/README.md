@@ -120,7 +120,7 @@ print(out.certificate_text)          # the wording stored on the record, verbati
 
 The platform runs inside your own infrastructure and is licensed per
 deployment. To run a pilot or evaluate it on your book, write to
-**[CONTACT ADDRESS OR FORM URL]**.
+**iouattara@reliax.io**.
 
 What comes back, stored verbatim on a hash-chained record:
 
